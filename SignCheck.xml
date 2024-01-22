@@ -9,7 +9,6 @@
    <DefaultLocale>en-US</DefaultLocale>
    <DisplayName DefaultValue="SignCheck Add-In"/>
    <Description DefaultValue="Check for signatures in attachments"/>
-   <SupportUrl DefaultValue="https://your-support-url.com"/>
    <Hosts>
      <Host Name="Mailbox"/>
    </Hosts>
