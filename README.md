@@ -21,7 +21,7 @@ The SignCheck Outlook Add-In uses OpenAI GPT-4 Vision API to detect signatures i
 ## Usage
 
 - Open an email with attachments in Outlook.
-- Signatures are automatically checked, and results are displayed in the email body.
+- Signatures are automatically checked, and results are displayed below the email body.
 
 ## License
 
