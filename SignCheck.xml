@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:type="MailApp">
+   <Id>signCheckAddIn</Id>
+   <Version>1.0.0.0</Version>
+   <ProviderName>Your Provider</ProviderName>
+   <DefaultLocale>en-US</DefaultLocale>
+   <DisplayName DefaultValue="SignCheck Add-In"/>
+   <Description DefaultValue="Check for signatures in attachments"/>
+   <Hosts>
+     <Host Name="Mailbox"/>
+   </Hosts>
+   <Requirements>
+     <Sets DefaultMinVersion="1.1"/>
+     <Set Name="Mailbox"/>
+   </Requirements>
+   <Permissions>ReadItem</Permissions>
+</OfficeApp>
