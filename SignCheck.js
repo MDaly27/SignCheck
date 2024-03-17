@@ -77,13 +77,19 @@ async function checkForSignature(attachmentId) {
 }
 
 // Function to display the result in the body of the email
-function displaySignatureResult(attachmentName, hasSignature) {
-    const body = Office.context.mailbox.item.body;
-    const signatureStatus = hasSignature ? 'Signature Detected' : 'No Signature Detected';
+// Function to display the result in the body of the email
+async function displaySignatureResult(attachmentName, hasSignature) {
+    try {
+        // Get the current body of the email
+        const body = await Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html);
 
-    // Add HTML to the body of the email
-    body.setAsync(
-        `<p>${attachmentName}: ${signatureStatus}</p>`,
-        { coercionType: Office.CoercionType.Html }
-    );
+        // Append the signature status to the existing body content
+        const signatureStatus = hasSignature ? 'Signature Detected' : 'No Signature Detected';
+        const newContent = `${body.value}<br/><p>${attachmentName}: ${signatureStatus}</p>`;
+
+        // Set the modified body back to the email
+        await Office.context.mailbox.item.body.setAsync(newContent, { coercionType: Office.CoercionType.Html });
+    } catch (error) {
+        console.error('Error displaying signature result:', error);
+    }
 }
